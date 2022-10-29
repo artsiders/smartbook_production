@@ -46,8 +46,8 @@ app.get("/*", (_, res) => {
     res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
-// mongoose.connect('mongodb+srv://salim:Motdepass1@serverartsider.yxmlj.mongodb.net/smartbook?retryWrites=true&w=majority',
-mongoose.connect('mongodb://localhost:27017/smartbook',
+// mongoose.connect('mongodb://localhost:27017/smartbook',
+mongoose.connect('mongodb+srv://smartbook:gHEnskZ06bEpa0hE@smartbook.tfvj1im.mongodb.net/?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
