@@ -1,0 +1,58 @@
+.recettes {
+    @extend .home_page;
+    .tab_recette {
+        height: fit-content;
+        width: 100%;
+        background-color: var(--backgroundWhite);
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(128, 128, 128, 0.192);
+        border-radius: 0 0 8px 8px;
+
+        .onglets {
+            display: flex;
+            position: relative;
+            background: var(--background);
+            border-radius: 0px !important;
+            
+            button {
+                min-height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--background);
+                text-decoration: none;
+                padding: 5px 15px;
+                width: fit-content;
+                min-width: 80px;
+                height: inherit;
+                text-align: center;
+                padding: auto 0;
+                word-wrap: wrap;
+                color: var(--ecriture);
+                cursor: pointer;
+                // box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+                border: 1px solid rgba(128, 128, 128, 0.192);
+                border-radius: 0px !important;
+                &:hover {
+                    background-color: var(--green-70);
+                    border-color: var(--green);
+                    transition: .3s ease;
+                }
+            }
+            button.active {
+                background-color: var(--backgroundWhite);
+                color: var(--ecriture);
+                border-bottom: none;
+            }
+
+        }
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .recettes .tab_recette .onglets button {
+        width: 100%;
+    }
+}

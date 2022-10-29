@@ -1,0 +1,257 @@
+.list_employees {
+    background-color: var(--backgroundWhite);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(128, 128, 128, 0.192);
+    padding: 10px;
+    position: relative;
+    animation: zoomInY .3s linear;
+    grid-column: span 2;
+    .popup {
+        animation: zoomInY .1s linear;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        background-color: var(--background);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 10px;
+        gap: 10px;
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        margin: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.11);
+        display: none;
+        .message {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .controls {
+            display: flex;
+            gap: 20px;
+            .ok {
+                width: 90px;
+            }
+            .annuler {
+                width: 90px;
+                background-color: var(--red);
+            }
+        }
+    }
+    h3 {
+        text-align: center;
+        width: 100%;
+        animation: zoomInY .1s linear;
+    }
+    .details {
+        max-height: 40vh;
+        height: 40vh;
+        overflow-y: scroll;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #00000045;
+        animation: zoomInY .2s linear;
+        overflow-x: hidden;
+        em {
+            font-weight: bold;
+            margin-right: 10px;
+            text-transform: capitalize;
+            border-right: 1px solid black;
+        }
+        li {
+            display: grid;
+            grid-template-columns: 120px auto;
+            padding: 10px 0;
+            border-bottom: 1px solid black;
+            em {
+                border-radius: 0px !important;
+            }
+        }
+        input {
+            @extend %input;
+            width: calc(100% - 10px)
+        }
+        .back {
+            background: #676767;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 45px;
+            animation: zoomInX .1s linear;
+            .tooltip{
+                @extend %tooltip;
+                left: -40px;
+                top: -20px;
+                width: auto;
+            }
+            &:hover .tooltip {
+                top: 20px;
+                left: -40px;
+                transition: .4s ease;
+                opacity: 1;
+            }
+        }
+        .action {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            padding: 10px;
+            button {
+                width: auto;
+            }
+        }
+        .edit {
+            @extend %button;
+            margin: 10px 0;
+            background-color: var(--green);
+            position: absolute;
+            width: 45px;
+            top: 90px;
+            right: 20px;
+            animation: zoomInX .1s linear;
+            .tooltip{
+                @extend %tooltip;
+                left: -70px;
+                top: -20px;
+                width: auto;
+                height: auto;
+                line-height: normal;
+                z-index: 10;
+            }
+            &:hover .tooltip {
+                top: 40px;
+                left: -70px;
+                transition: .4s ease;
+                opacity: 1;
+            }
+        }
+    }
+    .list {
+        height: 40vh;
+        max-height: 40vh;
+        overflow-y: scroll;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #00000045;
+        overflow-x: hidden;
+
+        .img500 {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            grid-column: span 3;
+            .i500{
+                height: inherit;
+                max-height: 250px;
+            }
+        }
+        .load {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-column: span 3;
+            .iload{
+                height: 40px;
+            }
+        }
+    }
+    .content {
+        display: flex;
+        gap: 10px;
+    }
+    .item {
+        display: grid;
+        border-radius: 4px;
+        cursor: pointer;
+        grid-template-columns: auto 50px;
+        margin-bottom: 10px;
+        padding: 5px;
+        gap: 10px;
+        border: 1px solid transparent;
+        &:hover {
+            background-color: var(--green-70);
+            border: 1px solid var(--green);
+        }
+        .image {
+            height: 40px;
+            width: 40px;
+            overflow: hidden;
+            border-radius: 50% !important;
+            img {
+                width: 40px;
+                min-width: 40px;
+                height: auto;
+                min-height: 40px;
+                border-radius: 4px;
+                transition: .1s ease;
+            }
+        }
+        &:hover .image img{
+            transform: scale(1.1);
+            transition: .1s ease;
+        }
+        .text {
+            p{
+                font-weight: 500;
+                text-transform: capitalize;
+                font-size: 1em;
+            }
+            span {
+                font-size: 14px;
+                font-weight: 400;
+                opacity: .9;
+                text-align: center;
+            }
+        }
+        .action {
+            display: flex;
+            gap: 5px;
+            justify-content: flex-end;
+            i {
+                line-height: 40px;
+                width: 40px;
+                font-size: 14px;
+                text-align: center;
+                color: var(--ecriture);
+                cursor: pointer;
+                &:hover {
+                    color: var(--blue);
+                }
+            }
+            .idelete:hover {
+                color: var(--red);
+            }
+        }
+
+    }
+    button {
+        @extend %button;
+        width: 50px;
+        float: right;
+        i{text-align: center;}
+        position: relative;
+        .tooltip{
+            @extend %tooltip;
+            left: -110px;
+            width: 200px;
+        }
+        &:hover .tooltip {
+            top: 18px;
+            transition: .4s ease;
+            opacity: 1;
+        }
+    }
+}

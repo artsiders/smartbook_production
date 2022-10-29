@@ -1,0 +1,39 @@
+.tab_recettes {
+    @extend %tableau;
+    position: relative;
+    border-radius: 8px;
+    padding: 0 10px;
+    h3, h4, h4 span {
+        margin: 10px;
+        text-transform: capitalize;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--ecriture);
+    }
+    h4 {
+        font-size: 14px;
+        text-transform: capitalize;
+        font-weight: 600;
+        span {
+            color: var(--green);
+        }
+    }
+    .print {
+        position: absolute;
+        top: 0;
+        right: -6px;
+        background: #247ba0; 
+        width: fit-content;
+    }
+    .credit {
+        color: #fe475d;
+    }
+    .observations,
+    .date{
+        text-decoration: wavy;
+    }
+    .vercements,
+    .recouverments {
+        color: #8476ff;
+    }
+}

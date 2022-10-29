@@ -1,0 +1,229 @@
+.rapport_print {
+    display: grid;
+    grid-gap: 30px;
+    text-align: center;
+    width: 900px;
+    margin: auto;
+    color: black;
+
+    .title {
+        padding: 20px;
+        font-family: Times New Roman;
+
+        h3 {
+            font-size: 28px;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        h4,
+        span {
+            font-size: 24px;
+        }
+    }
+
+    .rapport_action {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        button {
+            @extend %button;
+            float: right;
+            color: white;
+            position: relative;
+            display: flex;
+            text-decoration: none;
+            align-items: center;
+
+            i {
+                height: auto;
+                margin: auto;
+            }
+
+            .tooltip {
+                @extend %tooltip;
+                left: -115px;
+                top: 0px;
+                width: 200px;
+            }
+
+            &:hover .tooltip {
+                top: 15px;
+                transition: .4s ease;
+                opacity: 1;
+            }
+        }
+    }
+
+    .tab_recettes_print,
+    .tab_depenses_print {
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.274);
+        height: 1122px;
+        position: relative;
+
+        .pied_page {
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            width: 100%;
+        }
+    }
+
+    .table {
+        width: 90%;
+        margin: auto;
+        border-collapse: collapse;
+        color: var(--ecriture);
+        text-transform: lowercase;
+        transition: .3s ease;
+        animation: fadeIn .2s ease-in-out;
+        margin-bottom: 40px;
+        color: black;
+
+
+
+        tbody tr {
+            position: relative;
+            transition: .4s ease;
+
+            .action {
+                display: none;
+            }
+        }
+
+        thead tr {
+            text-transform: capitalize;
+
+            .tr_action {
+                display: none;
+            }
+        }
+
+        td {
+            text-transform: capitalize;
+            font-weight: bold;
+            position: relative;
+
+            &.credit {
+                color: #c00000;
+            }
+
+            &.recouverments,
+            &.vercements {
+                color: #7030a0;
+            }
+
+            input {
+                @extend %input;
+                background-color: rgb(231, 231, 231);
+                color: black;
+                text-align: center;
+                font-weight: bold;
+                height: 100%;
+                font-family: consolas;
+                letter-spacing: 2px;
+                padding-left: 10px;
+                // border-radius: 0px !important;
+                border: 2px solid var(--green-70);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        tr.total td {
+            font-size: 18px;
+            text-transform: uppercase !important;
+        }
+
+
+
+        td input::placeholder {
+            opacity: .3;
+        }
+
+        tr:hover .action {
+            opacity: 1;
+        }
+    }
+
+    .rapport_result {
+        display: grid;
+        grid-gap: 30px;
+
+        .pied_page {
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            width: 100%;
+        }
+
+        .tab_recettes,
+        .hebergement,
+        .bar,
+        .cusine,
+        .travail {
+            background-color: white;
+            height: 1122px;
+            max-width: 100%;
+            width: 100%;
+            padding: 10px;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.274);
+        }
+
+        h3,
+        h4 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        strong {
+            margin: 0;
+        }
+
+        ul {
+            margin: auto;
+            width: 90%;
+            position: relative;
+
+            li {
+                list-style: none;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid rgb(99, 99, 99);
+                border-radius: 0;
+
+                span {
+                    text-transform: capitalize;
+                    margin: 0;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+}
+
+@media print {
+    .rapport_print {
+        width: 100%;
+        grid-gap: 0px;
+
+        .rapport_action {
+            display: none;
+        }
+
+        .rapport_result {
+            grid-gap: 0px;
+        }
+
+    }
+}

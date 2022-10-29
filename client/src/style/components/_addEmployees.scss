@@ -1,0 +1,103 @@
+.add_employees {
+    text-transform: capitalize;
+    padding-bottom: 0 !important;
+    animation: zoomInX .1s linear;
+    margin: auto;
+    max-width: 800px;
+    hr {
+        border-color: rgba(0, 63, 31, 0.24);
+        margin-top: 20px;
+    }
+    span {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .message {
+        color: var(--red);
+        font-weight: bold;
+        text-align: right;
+        font-size: 18px;
+    }
+    .form_group {
+        display: flex;
+        // justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+        padding: 10px;
+        
+        label {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .label_sexe {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 10px;
+            label {
+                background-color: var(--background);
+                position: relative;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 4px;
+                cursor: pointer;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 20px;
+                    width: 20px;
+                    border: 3px solid rgba(66, 66, 66, 0.377);
+                    border-radius: 50%;
+                    top: 7px;
+                    left: 10px;
+                }
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+                }
+            }
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"] {
+            @extend %input;
+            position: relative;
+        }
+
+    }
+    input[type="radio"]:checked + label {
+        background-color: var(--green);
+        color: white;
+        font-weight: 600;
+    }
+    input[type="radio"]:checked + label::before {
+        border-color: white;
+    }
+    .form_button {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        gap: 10px;
+        padding: 10px;
+        
+        .ajouter {
+            background-color: var(--blue);
+            width: 150px;
+        }
+        .annuler {
+            background-color: var(--red);
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .add_employees {
+        .form_group {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.employees_page {
+    @extend .home_page;
+    .list_employees {
+        height: fit-content;
+        background-color: var(--background);
+        box-shadow: 0 0 0;
+        border: none;
+        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+        border: 1px solid #5f5f5f;
+        transition: .3s ease;
+        h3{
+            background-color: var(--backgroundWhite);
+            border: 1px solid rgba(128, 128, 128, 0.192);
+            padding: 10px 0;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .list {
+            height: fit-content;
+            max-height: fit-content;
+            overflow-y: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 15px;
+            border-bottom: 0;
+            .item {
+                animation: zoomInY .2s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                background-color: var(--backgroundWhite);
+                border-bottom: 1px solid #5f5f5f;
+                border-radius: 4px;
+                padding-right: 10px;
+                border: 1px solid rgba(128, 128, 128, 0.192);
+                margin: 0;
+                .content {
+                    padding-left: 10px;
+                    padding-top: 10px;
+                }
+
+                .salaire {
+                    line-height: 40px;
+                    text-align: left;
+                    color: var(--green);
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                    font-family: consolas;
+                    font-weight: bold;
+                    padding-left: 10px;
+                }
+                .action {
+                    justify-content: space-between;
+                }
+            }
+        }
+        .details, .add_employees {
+            height: fit-content;
+            max-height: fit-content;
+            overflow-y: hidden;
+            background-color: var(--backgroundWhite);
+            padding: 25px 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(128, 128, 128, 0.192);
+
+            .back {
+                top: 85px;
+            }
+            .edit {
+                top: 125px;
+            }
+        }
+        .content_btn {
+            background-color: var(--backgroundWhite);
+            border: 1px solid rgba(128, 128, 128, 0.192);
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-top: -5px;
+            transition: .3 linear;
+            animation: zoomInY .2s linear;
+        }
+        
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .employees_page {
+        .list_employees {
+            border: none;
+            .list {
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 5px;
+            }
+        }
+    }
+}
+@media screen and(max-width: 700px) {
+    .employees_page {
+        .list_employees {
+            .list {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+@media screen and(max-width: 600px) {
+    .employees_page {
+        .list_employees {
+            padding: 0;
+            .popup {
+                position: fixed ;
+                height: 100vh;
+            }
+            .list {
+                grid-gap: 20px;
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    border-bottom: 1px solid rgb(95, 95, 95);
+                    border-radius: 0;
+                    .salaire {
+                        text-align: center;
+                    }
+                    .action {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}

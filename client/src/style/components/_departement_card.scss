@@ -1,0 +1,86 @@
+.departement_card {
+    overflow: hidden;
+    position: relative;
+    background-color: var(--backgroundWhite);
+    height: 110px;
+    min-width: 32.6%;
+    width: 100%;
+    padding: 10px 20px;
+    transition: .1s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.055);
+    border: 1px solid rgba(128, 128, 128, 0.192);
+
+    &:hover {
+        border: 1px solid var(--green-70);
+    }
+
+    a {
+        color: var(--ecriture);
+        display: grid;
+        grid-template-columns: 50px auto;
+        text-decoration: none;
+        height: 100%;
+
+        &:hover .icon {
+            color: var(--green);
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+
+        .icon {
+            width: 100%;
+        }
+
+        .icon img {
+            width: 100%;
+            height: 60%;
+        }
+
+        .info {
+            text-align: right;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        .progress {
+            position: absolute;
+            bottom: 10px;
+            opacity: .8;
+            right: 10px;
+            max-width: 100%;
+            width: 1%;
+            height: 5px;
+            transition: .3s ease;
+            height: 15px;
+            font-size: 12px;
+            font-weight: bold;
+
+            i {
+                position: absolute;
+                right: 0;
+                top: -9px;
+                background: var(--backgroundWhite);
+                padding: 0 5px;
+                opacity: .8;
+            }
+
+        }
+
+        p {
+            color: #fe475d;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+
+        }
+
+        span {
+            color: var(--green);
+            font-weight: bold;
+
+        }
+    }
+}

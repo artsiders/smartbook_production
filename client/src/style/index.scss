@@ -1,0 +1,142 @@
+@import "./settings";
+
+@import "./components/sideBar";
+
+@import "./components/topBar";
+
+@import "./pages/home";
+
+@import "./components/departement_card";
+
+@import "./components/employees";
+
+@import "./components/addEmployees";
+
+@import "./components/doughnut";
+
+@import "./pages/analytique";
+
+@import "./components/chartLine";
+
+@import "./pages/notification";
+
+@import "./pages/recettes";
+
+@import "./pages/depenses";
+
+@import "./pages/helps";
+
+@import "./pages/admin";
+
+@import "./pages/parametre";
+
+@import "./pages/employees.page";
+
+@import "./components/titleBar";
+
+@import "./components/tableau";
+
+@import "./components/tabDepenses";
+
+@import "./components/tabRecettes";
+
+@import "./components/tabEmployees";
+
+@import "./pages/login";
+
+@import "./pages/rapport";
+
+@import "./pages/rapport_print";
+
+@import "./components/entete";
+
+@import "./components/piedPage";
+
+@import "./components/result";
+
+
+// Buttons
+//
+// Custom buttons for the docs.
+
+%btn-primary {
+    font-weight: 600;
+    color: white;
+    background-color: red;
+    border-color: red;
+
+    &:hover,
+    &:active {
+        color: white;
+        background-color: shade-color(red, 20%);
+        border-color: shade-color(red, 20%);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(red, .25);
+    }
+}
+
+%btn-download {
+    font-weight: 600;
+    color: grey;
+    border-color: grey;
+
+    &:hover,
+    &:active {
+        color: red;
+        background-color: grey;
+        border-color: grey;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(red, .25);
+    }
+}
+
+.btn-bd-light {
+    color: red;
+    border-color: red;
+
+    .show>&,
+    &:hover,
+    &:active {
+        color: red;
+        background-color: white;
+        border-color: red;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(red, .25);
+    }
+}
+
+
+
+
+
+#root {
+    .app {
+        display: grid;
+        grid-template-rows: 55px auto;
+        grid-template-columns: 100vw;
+        height: 100vh;
+        width: 100%;
+
+        section {
+            display: flex;
+            overflow: hidden;
+            transition: .3s ease;
+        }
+
+        article {
+            width: 100%;
+            padding: 10px 10px;
+            gap: 16px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {}
+}

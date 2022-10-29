@@ -1,0 +1,42 @@
+.home_page {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    .content_departement {
+        display: grid;
+        height: fit-content;
+        animation: zoomInY .3s ease-in-out;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 100%;
+        grid-gap: 10px;
+        max-height: 50vh;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+    .home_page {
+        grid-template-rows: auto auto auto;
+        .content_departement {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+        .calandar {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 10px;
+        }
+        
+    }
+}

@@ -1,0 +1,50 @@
+.tab_employees {
+    @extend %tableau;
+    background-color: var(--backgroundWhite);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(128, 128, 128, 0.192);
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 25px;
+    position: relative;
+
+    table {
+        margin-top: 20px;
+        tbody {
+            transition: .3s linear;
+            td[data-label="nom"] {
+                text-align: left;
+                padding-left: 10px;
+            }
+            tr {
+                animation: zoomInX .3s ease-in-out;
+            }
+        }
+    }
+    h3, h4, span {
+        margin: 10px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--ecriture);
+    }
+    h4 {
+        font-size: 16px;
+        text-transform: capitalize;
+        font-weight: 600;
+        span {
+            color: var(--green);
+        }
+    }
+    .print {
+        position: absolute;
+        top: 0;
+        right: -6px;
+        background: #247ba0; 
+        width: fit-content;
+    }
+    .nom {
+        text-align: left !important;
+        padding-left: 10px !important;
+    }
+}

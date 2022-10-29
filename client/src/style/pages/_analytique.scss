@@ -1,0 +1,80 @@
+.analytics {
+    @extend .home_page;
+    main {
+        display: grid;
+        grid-template-columns: 5fr 3fr;
+        .nav_stat {
+            height: fit-content;
+            width: 100%;
+            background-color: var(--backgroundWhite);
+            color: white;
+            
+            .content {
+                // overflow-x: scroll;
+                // &::-webkit-scrollbar{
+                //     width: 4px;
+                //     height: 6x;
+                // }
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+                border: 1px solid rgba(128, 128, 128, 0.192);
+                text-align: center;
+                span {
+                    color: var(--ecriture);
+                    font-weight: 600;
+                }
+                button {
+                    @extend %button;
+                    margin: 0 20px 10px 20px;
+                    background-color: transparent;
+                    color: var(--ecriture);
+                    width: 40px;
+                }
+            }
+
+    
+            .onglets {
+                display: flex;
+                position: relative;
+                button {
+                    min-height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--background);
+                    text-decoration: none;
+                    padding: 5px 15px;
+                    width: 100%;
+                    height: inherit;
+                    text-align: center;
+                    padding: auto 0;
+                    word-wrap: wrap;
+                    color: var(--ecriture);
+                    cursor: pointer;
+                    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+                    border: 1px solid rgba(128, 128, 128, 0.192);
+                    border-radius: 0px !important;
+                    &:hover {
+                        background-color: var(--green-70);
+                        border-color: var(--green);
+                        transition: .3s ease;
+                    }
+                }
+                button.active {
+                    background-color: var(--backgroundWhite);
+                    color: var(--ecriture);
+                    border-bottom: none;
+                }
+    
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 700px) {
+    .analytics {
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

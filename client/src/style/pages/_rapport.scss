@@ -1,0 +1,199 @@
+.rapport {
+    @extend .home_page;
+    gap: 60px;
+
+    .back {
+        width: 40px;
+        background-color: gray;
+        position: absolute;
+        right: 0px;
+        top: 60px;
+    }
+
+    .top {
+        width: 40px;
+        background-color: var(--blue);
+        position: absolute;
+        right: 0px;
+        bottom: 0;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .title_bar,
+    .btn_print {
+        margin-bottom: -40px;
+    }
+
+    .btn_print {
+        position: fixed;
+        z-index: 4;
+        right: 20px;
+        top: 100px;
+    }
+
+    .print.turn {
+        height: 35px;
+        background: transparent;
+    }
+
+    .tab_recettes,
+    .hebergement,
+    .bar,
+    .cusine,
+    .travail {
+        background-color: var(--backgroundWhite);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(128, 128, 128, 0.192);
+        height: fit-content;
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+        position: relative;
+    }
+
+    h3,
+    h4 {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    strong {
+        margin: 0;
+    }
+
+    ul {
+        margin: 20px 0;
+        width: 100%;
+        position: relative;
+
+        li {
+            list-style: none;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(99, 99, 99);
+
+            span {
+                text-transform: capitalize;
+                margin: 0;
+                text-align: left;
+            }
+        }
+    }
+
+    button,
+    a {
+        @extend %button;
+        float: right;
+        background-color: var(--blue);
+        border: 2px solid var(--blue);
+        color: var(--ecriture);
+        position: relative;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+
+        i {
+            height: auto;
+            margin: auto;
+        }
+
+        .tooltip {
+            @extend %tooltip;
+            left: -115px;
+            top: 0px;
+            width: 200px;
+        }
+
+        &:hover .tooltip {
+            top: 10px;
+            transition: .4s ease;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .rapport.print_mode {
+        margin: auto auto;
+
+        %tableau {
+            .table thead {
+                display: block;
+            }
+
+            .table {
+                .action i {
+                    font-size: 16px;
+                    border-radius: 5px !important;
+                    background-color: var(--blue-70);
+                    top: 15px;
+                    color: var(--ecriture);
+                }
+
+                .submit i {
+                    border: 2px solid var(--green);
+                }
+            }
+
+            .table,
+            .table tbody,
+            .table tr,
+            .table td {
+                display: block;
+                width: 100%;
+
+                .action,
+                .submit {
+                    height: 40px;
+                    font-size: 20px;
+                    position: absolute;
+                    top: -6px;
+                    right: 20px;
+                }
+
+                .action::before {
+                    content: "";
+                }
+            }
+
+            // .table tr{
+            //     margin-bottom:15px;
+            // }
+            .table thead td {
+                overflow: hidden;
+            }
+
+            .table tbody td {
+                height: auto;
+            }
+
+            .table td {
+                text-align: right;
+                padding-left: 50%;
+                text-align: right;
+                position: relative;
+            }
+
+            .table input {
+                width: 150px !important;
+                position: relative !important;
+                height: 36px !important;
+            }
+
+            .table td::before {
+                content: "";
+                position: relative;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-size: 15px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.entete {
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+    border-bottom: 4px solid rgba(128, 128, 128, 0.192);
+    background-color: white;
+    opacity: .9;
+    padding: 20px 0;
+
+    img {
+        height: 120px;
+        width: 140px;
+        margin: 5px;
+        margin-left: 30px;
+    }
+
+    h1 {
+        opacity: .6;
+        font-family: Times New Roman;
+        font-size: 30px;
+        padding-top: 5px;
+        line-height: 20px;
+        letter-spacing: 2px;
+        margin: 0;
+        color: var(--green);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    p {
+        opacity: .6;
+        text-align: center;
+        max-width: 318px;
+        margin: auto;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 20px;
+        font-family: Times New Roman;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .entete {
+        display: flex;
+        justify-content: center;
+
+        img {
+            display: none;
+        }
+    }
+}

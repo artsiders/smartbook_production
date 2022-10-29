@@ -1,0 +1,193 @@
+$font : -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
+$background-blue-sky: #edf2f9;
+$primary:    #9c9ea1 !default;
+$success:    #198754 !default;
+$secondary:  #676767 !default;
+$danger:     #dc3545 !default;
+$warning:    #fd7e14 !default;
+$auther:     #151845 !default;
+
+:root {
+  --primary: #247BA0;
+
+  --red:     #c7192e;
+  --blue: #247BA0;
+  --yellow:    #ffc700;
+  --orange:    #ff9900;
+  --green:    #22a77d;
+
+  --red-70:     #c7192e70;
+  --blue-70: #247BA070;
+  --yellow-70:    #ffc70070;
+  --orange-70:    #ff990070;
+  --green-70:    #22a77d70;
+  
+  --color1:    #50514f;
+
+
+  --background:       #eff5ff;
+  --backgroundWhite:  #ffffff;
+  --ecriture:   #131523;
+  --dark:   #131523;
+}
+
+// SCROLL BAR //
+::-webkit-scrollbar{
+  width: 4px;
+  height: 6px;
+}
+/* ::-webkit-scrollbar-button {
+  background-color: var(--primary);
+} */
+::-webkit-scrollbar-thumb{
+  background-color: var(--green-70);
+  // border-radius: 10px;
+  max-width: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--green);
+}
+::-webkit-scrollbar-track{
+  background-color: var(--background);
+  padding: 2px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, .5);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: static;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--ecriture);
+    margin: 0;
+    font-family: $font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+
+
+%button {
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: var(--blue);
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 0 10px;
+  &:hover {
+      transform: scale(1.02);
+  }
+  &:active {
+      transform: scale(.98);
+  }
+}
+%input {
+  height: 36px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 14px;
+  border: 1px solid rgba(128, 128, 128, 0.192);
+  background-color: var(--background);
+  color: var(--ecriture);
+
+  &:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+    border: 1px solid rgba(128, 128, 128, 0.651);
+  }
+}
+
+%tooltip{
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  font-size: 16px;
+  font-family: $font;
+  font-weight: normal;
+  text-transform: lowercase;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  min-width: fit-content;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: var(--backgroundWhite);
+  color: var(--ecriture);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes zoomInY {
+  0% {
+    opacity: 0;
+    transform: scaleY(.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+@keyframes zoomInX {
+  0% {
+    opacity: 0;
+    transform: scaleX(.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes move {
+  0% {
+    top: 35px;
+    right: 48px;
+  }
+  50% {
+    top: 0px;
+    right: 16px;
+  }
+  100% {
+    top: 25px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,99 @@
+.notification {
+    @extend .home_page;
+    .messages {
+        width: 400px;
+        height: 74vh;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(128, 128, 128, 0.192);
+        padding: 10px;
+        overflow-y: scroll;
+        position: relative;
+        border-radius: 10px 0 0 10px;
+
+
+        button {
+            @extend %button;
+            float: right;
+            background-color: var(--blue);
+            border: 2px solid var(--blue);
+            color: white;
+            position: relative;
+            display: flex;
+            text-decoration: none;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            i {
+                height: auto;
+                margin: auto;
+            }
+            .tooltip{
+                @extend %tooltip;
+                left: -115px;
+                top: 0px;
+                width: 200px;
+            }
+            &:hover .tooltip {
+                top: 20px;
+                transition: .4s ease;
+                opacity: 1;
+            }
+        }
+    }
+
+    .bulle {
+        background-color: var(--backgroundWhite);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(128, 128, 128, 0.192);
+        border-radius: 12px;
+        color: var(--ecriture);
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 40px auto;
+        grid-gap: 20px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: red;
+            right: 5px;
+            top: calc(100% - 2px);
+            border-top: 0px;
+            background-color: transparent;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+            border: solid;
+            border-width: 15px 25px 10px 10px;
+            z-index: -1;
+            border-color: var(--backgroundWhite) transparent transparent transparent;
+        }
+        img{
+            height: 40px;
+            width: 40px;
+        }
+        .text {
+            h4 {
+                text-transform: capitalize;
+                font-size: 18px;
+            }
+            p {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .notification {
+        .messages {
+            width: 95%;
+        }
+    }
+}
